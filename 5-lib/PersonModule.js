@@ -1,4 +1,5 @@
-// uses the NodeJS 'events' module to create a Person object that inherits the EventEmitter .on() and .emit() methods via the NodeJS 'util' module and its util.inherits() method
+// Person object from 4-eventEmitter.js placed in a separate module
+// putting the code in a separate file makes it easier to re-use
 
 // add the NodeJS "events" modules
 // pull EventEmitter constructor function out of the NodeJS "events" module and assign it to a local variable
@@ -20,15 +21,6 @@ const Person = function(name) {
 // this means that the Person object has inheritted all the functonality of the EventEmitter object
 util.inherits(Person, EventEmitter);
 
-// create a new instance of the Person object with name "Steve Jobs"
-let steveJobs = new Person("Steve Jobs");
-// console.log(steveJobs.name);
-
-// the Person object can listen to events
-steveJobs.on("speak", function(said) {
-	// "this" = steveJobs
-	console.log(`${this.name}: ${said}`);
-});
-
-// the Person object can emit events
-steveJobs.emit("speak", "Keep it simple stupid.");
+// "module.exports" is like any JS object
+// "module.exports" is the object returned by the "require" function!!!
+module.exports = Person;
