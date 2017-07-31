@@ -156,21 +156,3 @@ const v8 = require("v8");
 let dirUploads = path.join(__dirname, "www", "files", "uploads");
 util.log(dirUploads);
 util.log(v8.getHeapStatistics());
-
-// the "readline" module is a wrapper for the stdin and stdout objects that allows us to ask the user questions via the Terminal / command prompt
-const readline = require("readline");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
