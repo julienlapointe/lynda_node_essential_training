@@ -3,7 +3,7 @@
 // can specify NodeJS modules by *name*
 // however, must specify custom modules by *path*
 // add Person object from the custom "Person" module
-const Person = require("./5-lib/PersonModule.js");
+const Person = require("./05-lib/PersonModule.js");
 
 // create a new instance of the Person object with name "Steve Jobs"
 let steveJobs = new Person("Steve Jobs");

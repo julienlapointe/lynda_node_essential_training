@@ -9,7 +9,7 @@ const spawn = require("child_process").spawn;
 // create a variable for the "child process"
 // param #1: command to run in Terminal (ex. "node")
 // param #2: array of commands / arguments that follow the 1st command / argument (ex. "alwaysTalking.js", which produces the complete command "node alwaysTalking.js") 
-let cp = spawn("node", ["7-alwaysTalking.js"]);
+let cp = spawn("node", ["07-alwaysTalking.js"]);
 
 // the "cp" instance can listen for "data" events on the stdout object...
 // in this example, alwaysTalking represents the "child process"
