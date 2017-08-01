@@ -1,4 +1,4 @@
-// this file create a markdown file
+// this file creates a markdown file
 
 // add the NodeJS "file system" module ("fs")
 const fs = require("fs");
