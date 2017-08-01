@@ -1,7 +1,7 @@
 // run Linux commands in Terminal using the child_process.exec() method from the NodeJS "child_process" module
 
 // the NodeJS "child_process" module *contains* the "exec" / execute function
-const exec = require("child_process").exec
+const exec = require("child_process").exec;
 
 // examples of commands that exec() can run in the Terminal on our behalf
 // exec("open http://www.lynda.com");
