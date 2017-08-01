@@ -2,6 +2,7 @@
 // "fs.readFile()" reads the entire file's contents, then returns it
 // if the file is very large, then "fs.readFile()" can slow down NodeJS
 // using "fs.createReadStream()" reads part of the large file and intermittently returns a "chunk" (approx. 65,000 characters long) of its contents
+// using "fs.readFile()" impacts the NodeJS *buffer*... must learn more about this...
 
 // add the NodeJS "file system" module ("fs")
 const fs = require("fs");

@@ -20,6 +20,7 @@ let famousPerson = {
 	// param #1: query <string> A statement or query to write to output, prepended to the prompt.
 	// param #2: callback <Function> A callback function that is invoked with the user's input in response to the query.
 rl.question("What is the name of a famous person you admire? ", function(answer) {
+	// store the famous person's name
 	famousPerson.name = answer;
 	// ask a new question / reset the "prompt" (param #1) in rl.question above
 	rl.setPrompt(`What would ${famousPerson.name} say? `);

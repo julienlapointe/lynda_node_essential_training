@@ -1,3 +1,5 @@
+// this file writes to a .md file using a "write stream" as opposed to using the "fs.writeFile()" method
+
 // add the NodeJS "file system" module ("fs")
 const fs = require("fs");
 // the "readline" module is a wrapper for the stdin and stdout objects that allows us to ask the user questions via the Terminal / command prompt
@@ -24,10 +26,13 @@ let famousPerson = {
 rl.question("What is the name of a famous person you admire? ", function(answer) {
 	// store the famous person's name
 	famousPerson.name = answer;
-	// create file *synchronously* so that more questions aren't asked + answered before the file is created
-	// param #1: filename
-	// param #2: contents
-	fs.writeFileSync(famousPerson.name + ".md", `${famousPerson.name}\n====================\n\n`);
+
+	// create the "write stream"
+	// param = filename to write to
+	var stream = fs.createWriteStream(famousPerson.name + ".md");
+	// write to the file specified above using the "write stream"
+	stream.write(`${famousPerson.name}\n====================\n\n`);
+	
 	// ask a new question / reset the "prompt" (param #1) in rl.question above
 	rl.setPrompt(`What would ${famousPerson.name} say? `);
 	// console.log(answer);
@@ -38,16 +43,21 @@ rl.question("What is the name of a famous person you admire? ", function(answer)
 	rl.on("line", function(saying) {
 		// store saying in famousPerson object
 		famousPerson.sayings.push(saying);
-		// append / add saying to file created above
-		// param #1: name of file to append / add content to
-		// param #2: content to append / add
-		fs.appendFile(famousPerson.name + ".md", `* ${saying.trim()} \n`);
+		
+		// write the saying to the "write stream"
+		stream.write(`* ${saying.trim()} \n`);
+
 		// if Terminal user enters "exit"...
 		if (saying.toLowerCase().trim() === "exit") {
 			// pop off the "exit" string from famousPerson.sayings array
 			famousPerson.sayings.pop();
-			// close "readline"
+
+			// close the "write stream"
+			stream.close();
+
+			// close "read line"
 			rl.close();
+
 		// otherwise, continue asking questions...
 		} else {
 			rl.setPrompt(`What else would ${famousPerson.name} say? ('exit' to leave) `);
