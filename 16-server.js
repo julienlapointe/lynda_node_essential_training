@@ -1,9 +1,12 @@
-// this file...
+// this file creates a web server that responds to incomg HTTP requests with some <HTML code/>
 
 // add the NodeJS "HTTPS" module
 const http = require("http");
 
+// create the HTTP server called "server"
 // every request to "server" (host?) will trigger the callback function to run
+// http://localhost:3000 = "server"
+// / or /style.css or /bird.jpg = "url"
 // must respond to the URL / route in the HTTP requests accordingly (ex. some requests may be asking for a specific file at /document.pdf or /user/profile or /login) and send back the appropriate *resource*
 // callback function params:
 	// param #1: req = headers, data, user / client info
