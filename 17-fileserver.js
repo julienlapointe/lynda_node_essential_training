@@ -1,6 +1,6 @@
 // this file creates an HTTP server and responds to requests with the appropriate resources from the "public" folder
 
-// add the NodeJS "HTTPS" module
+// add the NodeJS "HTTP" module
 const http = require("http");
 // add the NodeJS "file system" module ("fs")
 const fs = require("fs");

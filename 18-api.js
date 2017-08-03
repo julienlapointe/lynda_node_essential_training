@@ -1,6 +1,6 @@
 // this file creates an API server that responds to client requests with JSON data
 
-// add the NodeJS "HTTPS" module
+// add the NodeJS "HTTP" module
 const http = require("http");
 // *** add JSON data to serve ***
 const data = require("./data/inventory.json");

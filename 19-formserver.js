@@ -1,6 +1,6 @@
 // this file creates an API server that can receive data from the user / client via POST requests
 
-// add the NodeJS "HTTPS" module
+// add the NodeJS "HTTP" module
 const http = require("http");
 // add the NodeJS "file system" module ("fs")
 const fs = require("fs");
