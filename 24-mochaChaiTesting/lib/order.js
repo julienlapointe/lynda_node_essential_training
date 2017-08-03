@@ -1,5 +1,5 @@
-var inventoryData = require('../data-sample/inventory');
-var warehouse = require('./warehouse');
+var inventoryData = require('../data/inventory.json');
+var warehouse = require('./warehouse.js');
 
 function findItem(sku) {
     var i = inventoryData.map(item => item.sku).indexOf(sku);
